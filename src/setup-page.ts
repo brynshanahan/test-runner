@@ -12,7 +12,7 @@ import path from 'node:path';
  * In order to test stories, we need to prepare the environment first.
  * This is done by accessing the /iframe.html page of the Storybook instance. The test-runner then injects a script which prepares the environment for testing, then visits the stories.
  */
-const defaultPrepare = async ({ page, browserContext, testRunnerConfig }: PrepareContext) => {
+export const defaultPrepare = async ({ page, browserContext, testRunnerConfig }: PrepareContext) => {
   const targetURL = process.env.TARGET_URL;
   const iframeURL = new URL('iframe.html', targetURL).toString();
 
